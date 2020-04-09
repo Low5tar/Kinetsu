@@ -5,15 +5,15 @@ module MemeDB
     meme = 'random' if meme.nil?
     meme.downcase!
     if meme == 'submit'
-      event.respond 'You can submit a meme here: <http://goo.gl/forms/BRMomYVizsY7SqOg2>'
+      event.respond 'You can submit a meme here: <http://goo.gl/forms/something>'
       break
     end
-    memelist = JSON.parse(RestClient.get('http://chewbotcca.github.io/memedb/memes.json'))
+    memelist = JSON.parse(RestClient.get('http://Kinetsu.github.io/memedb/memes.json'))
     memers = []
     (0..memelist.length - 1).each do |i|
       memers[memers.length] = memelist[i]['Meme']
     end
-    memer = JSON.parse(RestClient.get("http://api.chew.pro/chewbotcca/memedb/#{meme}"))
+    memer = JSON.parse(RestClient.get("http://api.chew.pro/Kinetsu/memedb/#{meme}"))
     if memer['meme'] == 'Invalid Meme'
       event << "This meme doesn't exist! Make sure you spell the meme name right." unless meme.nil?
       event << "Here is a list of the current memes: `#{memers.join(', ')}`"
