@@ -4,13 +4,13 @@ module About
   command(%i[help commands about]) do |event|
     begin
       event.channel.send_embed do |embed|
-        embed.title = 'Welcome to the Chewbotcca Discord Bot'
+        embed.title = 'Welcome to the Kinetsu Discord Bot'
         embed.colour = 0xd084
-        embed.description = 'Chewbotcca is a multi-purpose, semi-functional, almost always online, discord bot!'
+        embed.description = 'Kinetsu is a multi-purpose, semi-functional, almost always online, discord bot!'
 
-        embed.add_field(name: 'Commands', value: 'You can find all my commands [here](http://discord.chewbotcca.co/commands)', inline: true)
-        embed.add_field(name: 'Invite me!', value: 'You can invite me to your server with [this link](http://bit.ly/Chewbotcca).', inline: true)
-        embed.add_field(name: 'Help Server', value: 'Click [me](https://discord.gg/Q8TazNz) to join the help server.', inline: true)
+        embed.add_field(name: 'Commands', value: 'You can find all my commands [here](http://discord.kinetsu.co/commands)', inline: true)
+        embed.add_field(name: 'Invite me!', value: 'You can invite me to your server with [this link](http://bit.ly/Kinetsu).', inline: true)
+        embed.add_field(name: 'Help Server', value: 'Click [me](https://discord.gg/something) to join the help server.', inline: true)
         embed.add_field(name: 'More Bot Stats', value: 'Run `%^stats` to see more stats!', inline: true)
       end
     rescue Discordrb::Errors::NoPermission
@@ -39,7 +39,7 @@ module About
     servers.push "Average: #{counts.sum / counts.length.to_f}"
     begin
       event.channel.send_embed do |e|
-        e.title = 'Chewbotcca Server Stats!'
+        e.title = 'Kinetsu Server Stats!'
 
         e.description = servers.join("\n")
         e.color = '36399A'
@@ -50,7 +50,7 @@ module About
   end
 
   command(:invite) do |event|
-    event.respond 'Hello! Invite me to your server here: <http://bit.ly/Chewbotcca>. Join my help server here: https://discord.gg/Q8TazNz'
+    event.respond 'Hello! Invite me to your server here: <http://bit.ly/Chewbotcca>. Join my help server here: https://discord.gg/something'
   end
 
   command(:forceupdateservercount) do |event|
@@ -83,10 +83,10 @@ module About
 
     begin
       event.channel.send_embed do |e|
-        e.title = 'Chewbotcca - A basic, yet functioning, discord bot'
+        e.title = 'Kinetsu - A basic, yet functioning, discord bot'
 
-        e.add_field(name: 'Author', value: '<@116013677060161545>', inline: true)
-        e.add_field(name: 'Code', value: '[View code on GitHub](http://github.com/Chewbotcca/Discord)', inline: true)
+        e.add_field(name: 'Author', value: '<@320564994330853377>', inline: true)
+        e.add_field(name: 'Code', value: '[View code on GitHub](http://github.com/Kinetsu/Discord)', inline: true)
         e.add_field(name: 'Bot Version', value: botversion, inline: true) unless botversion == ''
         e.add_field(name: 'Library', value: 'discordrb 3.2.1', inline: true)
         e.add_field(name: 'Uptime', value: "#{days}#{hours}#{mins}#{secs}", inline: true)
@@ -109,7 +109,7 @@ module About
     end
     begin
       event.channel.send_embed do |e|
-        e.title = 'Chewbotcca - Open Source Libraries'
+        e.title = 'Kinetsu - Open Source Libraries'
 
         (0..libs.length - 1).each do |i|
           url = "http://rubygems.org/gems/#{libs[i]}/versions/#{versions[i]}"
