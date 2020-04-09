@@ -28,4 +28,4 @@ Bots.length.times do |amount|
                                                      compress_mode: :stream)
 end
 
-require_relative 'lib/chewbot'
+require_relative 'lib/kinetsu'
